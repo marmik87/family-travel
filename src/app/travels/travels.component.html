@@ -1,0 +1,10 @@
+<h2>Our travels</h2>
+<ul class="travels">
+  <li *ngFor="let travel of travels"
+  [class.selected]="travel === selectedTravel"
+  (click)="onSelect(travel)">
+    <span class="badge">{{travel.id}}</span> {{travel.name}}
+  </li>
+</ul>
+
+<app-travel-detail [travel]="selectedTravel"></app-travel-detail>
