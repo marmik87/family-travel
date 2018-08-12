@@ -7,16 +7,23 @@ import { TravelDetailComponent } from './travel-detail/travel-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { VenuesComponent } from './venues/venues.component';
+import { MapComponent } from './map/map.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     TravelsComponent,
     TravelDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    VenuesComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
