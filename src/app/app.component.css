@@ -1,0 +1,31 @@
+a {
+  display: inline-block;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+a.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+
+nav {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+}
