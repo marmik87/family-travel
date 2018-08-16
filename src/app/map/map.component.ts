@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { } from '@types/googlemaps';
+import { Travel } from '../travel';
+
 
 // Implementation of Google Maps with help of https://medium.com/@balramchavan/integrating-google-maps-in-angular-5-ca5f68009f29
 
@@ -9,18 +11,20 @@ import { } from '@types/googlemaps';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+  @Input() travel: Travel;
 
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
 
- ngOnInit() {
+  ngOnChanges() {
+   var uluru = this.travel.latLng;
    var mapProp = {
-     center: new google.maps.LatLng(50.024488,14.590685),
-     zoom: 15
+     center: new google.maps.LatLng(50.038894, 14.488633)
+     zoom: 9
    };
    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
-   let uluru = {lat: 50.026678, lng: 14.597040};
+
 
    let marker = new google.maps.Marker({
         position: uluru,
@@ -28,8 +32,6 @@ export class MapComponent implements OnInit {
         title: 'Got you!'
       });
  }
-
-
 
   constructor() { }
 

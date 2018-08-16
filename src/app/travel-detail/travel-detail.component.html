@@ -2,4 +2,6 @@
   <h2>{{travel.name}}'s Details</h2>
   <div><span>Trip number: </span>{{travel.id}}</div>
   <div>Trip was made on: {{travel.date}}</div>
+  <div>Travel position: {{travel.lat}} {{travel.lng}}</div>
+  <app-map [travel]="travel"></app-map>
 </div>

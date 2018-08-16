@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Travel } from '../travel';
-//import { TRAVELS } from '../mock-travels';
 import { TravelService } from '../travel.service';
 
 @Component({
@@ -14,8 +13,6 @@ export class TravelsComponent implements OnInit {
   selectedTravel: Travel;
 
   travels: Travel[];
-
-  //travels = TRAVELS;
 
   constructor(private travelService: TravelService) { }
 
