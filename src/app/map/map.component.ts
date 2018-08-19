@@ -16,20 +16,19 @@ export class MapComponent implements OnInit {
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
 
-  ngOnChanges() {
-   var uluru = this.travel.latLng;
-   var mapProp = {
-     center: new google.maps.LatLng(50.038894, 14.488633)
+  ngOnInit() {
+  let mapProp = {
+     center: new google.maps.LatLng(50.038894, 14.488633),
      zoom: 9
    };
    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
-
-
-   let marker = new google.maps.Marker({
+  let uluru = this.travel.latLng;
+  let marker = new google.maps.Marker({
         position: uluru,
         map: this.map,
-        title: 'Got you!'
+        animation: google.maps.Animation.DROP,
+        title: this.travel.name
       });
  }
 

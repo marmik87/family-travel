@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Travel } from '../travel';
 import { TravelService } from '../travel.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-travels',
@@ -10,8 +11,6 @@ import { TravelService } from '../travel.service';
 
 export class TravelsComponent implements OnInit {
 
-  selectedTravel: Travel;
-
   travels: Travel[];
 
   constructor(private travelService: TravelService) { }
@@ -20,12 +19,9 @@ export class TravelsComponent implements OnInit {
     this.getTravels();
   }
 
-  onSelect(travel: Travel): void {
-    this.selectedTravel = travel;
-  }
-
   getTravels(): void {
-    this.travels = this.travelService.getTravels();
+    this.travelService.getTravels()
+      .subscribe(travels => this.travels = travels);
    }
 
 }

@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VenuesComponent } from './venues/venues.component';
 import { MapComponent } from './map/map.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MapComponent } from './map/map.component';
     TravelDetailComponent,
     DashboardComponent,
     VenuesComponent,
-    MapComponent
+    MapComponent,
+    MessagesComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

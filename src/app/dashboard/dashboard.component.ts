@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getTravels(): void {
-    this.travels = this.travelService.getTravels();
+    this.travelService.getTravels()
+      .subscribe(travels => this.travels = travels.slice(1, 5));
   }
 }
